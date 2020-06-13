@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(./images/cropui-bw.jpg);
+    background-size: 100vh;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    height: 7vh;
+    background-color: black;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0px 7px 5px lightgray;
+}
+
+.nav-text h4{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 80vh;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.btn-container {
+    padding-top: 2.5em;
+}
+
+.btn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 0.9em;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 4px 4px 5px lightgray;
+}
+
+img {
+    max-width: 100%;
+}
+
+.canvas-container {
+    width: 840px;
+}
+
+
+/* Modal */
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-bg h2 {
+    color: #333;
+    font-weight: 500;
+    padding-bottom: 1em;
+}
+
+.modal {
+    position: relative;
+    background-color: white;
+    padding: 1em;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal .btn{
+    font-size: 1em;
+    border-radius: 2px;
+}
+
+.cropped-img-container {
+    max-width: 80%;
+    padding-bottom:1.5em;
+}
+
+.cropped-img-container img{
+    max-height: 600px;
+}
+
+.modal-close {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.2em 0.45em;
+    background-color: darkgrey;
+    color: white;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.modal h3 {
+    padding: 0.5em;
+    font-family: 'Courier New', Courier, monospace;
+    color: gray;
+    margin: 0.25em;
+    font-size: 1em;
+}
+
+#attribution {
+    text-decoration: none;
+    margin-top: 3em;
+    color: gray;
+    font-size: 0.8rem;
+}

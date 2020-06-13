@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool</title>
+    <link
+    href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Tensorflow -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-text">
+            <h4>Crop and Predict</h4>
+        </div>
+    </header>
+    
+    <main>
+        <div class="main-container">
+            <video src="./videos/Pedestrian_overpass.mp4"
+            crossorigin="anonymous"
+            width="840px"
+            controls
+            id="myVideo"></video>
+            <div class="canvas-container">
+                <canvas id="myCanvas"></canvas>
+            </div>
+            <div class="btn-container">
+                <button class="btn"><i class="fa fa-play"></i> Play</button>
+                <button class="btn"><i class="fa fa-pause"></i> Pause</button>
+                <button class="btn"><i class="fa fa-crop"></i> Crop</button>
+                <button class="btn"><i class="fa fa-search-plus"></i> Zoom In</button>
+                <button class="btn"><i class="fa fa-search-minus"></i> Zoom Out</button>
+                <button class="btn"><i class="fa fa-rotate-left"></i> Rotate Left</button>
+                <button class="btn"><i class="fa fa-rotate-right"></i> Rotate Right</button>
+                <button class="btn"><i class="fa fa-upload"></i> Upload</button>
+            </div>
+            <input type="file" id="vid-file" hidden="hidden">
+            <a id="attribution" href='https://www.freepik.com/free-photos-vectors/background'>Background vector created by pikisuperstar - www.freepik.com</a>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal-bg">
+            <div class="modal">
+                <h2 class="modal-heading">Cropped Result</h2>
+                <h3 class="prediction-label" hidden="true"></h3>
+                <h3 class="prediction-prob" hidden="true"></h3>
+                <div class="cropped-img-container">
+                    <img src="" alt="">
+                </div>
+                <button class="btn" id="make-prediction">Make Prediction</button>
+                <span class="modal-close">X</span>
+                <span class="processing" hidden="true">Processing...</span> 
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
